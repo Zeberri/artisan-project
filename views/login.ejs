@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo">
+            <div style="background-color: white; padding: 5px 10px; border-radius: 5px; color: #e74c3c;"><a href="/">
+                BB
+            </div>
+            <span>BizBridge</span></a>
+        </div>
+        <nav>
+            <a href="/registration">Registration</a>
+            <a href="#">Pricing</a>
+            <a href="#">Login</a>
+            <a href="#">Get Your Service Listed</a>
+        </nav>
+    </div>
+
+    <% if(message !== '') { %>
+        <h5 style="color: blue;"><%- message %></h5>
+    <% } %>
+
+    <% if(error_msg !== '') { %>
+        <h5 style="color: red;"><%- error_msg %></h5>
+    <% } %>
+
+    <div class="semi-content">
+
+
+
+        <main class="semiii-content">
+            <h1>We Bring Clients & Reputable Service Providers Together</h1>
+            <div class="advertt-section">
+                <p>Login Below</p>
+            </div>
+        </main>
+
+
+
+        <div class="form-container">
+            <div class="form-box">
+                <h2>Artisan Login Form</h2>
+                <form action="/login" method="post">
+                    <input type="text" placeholder="Username" name="username">
+                    <input type="password" placeholder="Password" name="password">
+                    <button type="submit" name="" class="submit">Click to Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Connect With Us</p>
+        <div class="social-icons">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+</body>
+</html>

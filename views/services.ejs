@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICES</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo">
+            <div style="background-color: white; 
+                        padding: 5px 10px; 
+                        border-radius: 5px; 
+                        color: #e74c3c;">
+            <a href="/">BB
+            </div>
+            <span>BizBridge</span>
+        </a>
+        </div>
+        <nav>
+            <a href="/registration">Registration</a>
+            <a href="#">Pricing</a>
+            <a href="/login">Login</a>
+            <a href="#">Get Your Service Listed</a>
+        </nav>
+    </div>
+
+    <main class="service-content">
+        <main class="semii-content">
+            <h1>We Bring Clients & Reputable Service Providers Together</h1>
+            <div class="advertt-section">
+                <p>Artisans Available</p>
+            </div>
+        </main>
+        <h2><%- `${searchParam1}s in ${searchParam2}` %></h2>
+        
+
+        <hr>
+        
+        <div class="repairer-list">
+        <% results.forEach((result) => { %>
+            <div class="repairer">
+                <div class="repairer-image"></div>
+            
+                <div class="repairer-info">
+                    <p><strong>Company Name:</strong> <%- result.bn %></p>
+                    <p><strong>Contact Person:</strong> <%- result.cn %></p>
+                    <p><strong>CAC Status:</strong> <%- result.cacStatus %></p>
+                    <p><strong>Contact Number:</strong> <a href="https://wa.me/+234<%- result.phone %>" target="blank"><%- result.phone %></a> </p>
+                    <p><strong>Contact Email:</strong> <%- result.email %></p>
+                    <p><strong>Website:</strong> <a href="http:<%- result.url %>"><%- result.url %></a></p>
+                    <p><strong>Address:</strong> <%- result.address %></p>
+                </div>
+            </div>
+            <hr>
+        <% }) %>
+        </div>
+    </main>
+    
+
+    <div class="footer">
+        <p>Connect With Us</p>
+        <div class="social-icons">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+</body>
+</html>

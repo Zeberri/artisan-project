@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION PAGE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+<body>
+    
+    <div class="header">
+        <div class="logo">
+            <div style="background-color: white; padding: 5px 10px; border-radius: 5px; color: #e74c3c;"><a href="/">
+                BB
+            </div>
+            <span>BizBridge</span></a>
+        </div>
+        <nav>
+            <a href="#">Registration</a>
+            <a href="#">Pricing</a>
+            <a href="/login">Login</a>
+            <a href="#">Get Your Service Listed</a>
+        </nav>
+    </div>
+
+    <% if(message !== '') { %>
+        <h5 style="color: blue"><%- message %></h5>
+    <% } %>
+
+    <% if(error_msg !== '') { %>
+        <h5 style="color: red;"><%- error_msg %></h5>
+    <% } %>
+
+    <% if(typeof(errors) !== 'undefined') { %>
+        <% errors.forEach((err) => { %>
+            <h5 style="color: red"><%- err.msg %></h5>
+        <% }) %>
+    <% } %>
+
+    <div class="semi-content">
+
+
+
+        <main class="semiii-content">
+            <h1>We Bring Clients & Reputable Service Providers Together</h1>
+            <div class="advertt-section">
+                <p>Registration Still Ongoing</p>
+            </div>
+        </main>
+
+
+
+        <div class="form-container">
+            <div class="form-box">
+                <h2>Artisan Registration Form</h2>
+                <form action="/registration" method="post">
+                    <input type="text" placeholder="Contact Name" name="cn">
+                    <input type="text" placeholder="Contact Phone Number" name="phone">
+                    <input type="email" placeholder="Contact Email" name="email">
+                    <input type="text" placeholder="Business Name" name="bn">
+                    <label>What Is Your CACSTATUS? </label>
+                    <label>Registered</label>
+                    <input type="radio" name="cacStatus" value="Registered">
+                    <label>Not Registered</label>
+                    <input type="radio" name="cacStatus" value="Not Registered">
+                    
+                    <% let title = ["Interior Designer", "Hair Stylist", "Event Planner", "Caterer", "Web Designer", 
+                                    "Fashion Designer", "Electrician", "Plumber", "Auto Mechanic", "Massage Therapist"] 
+                    %>
+                    <select name="job">
+                            <option value="">Your Job Title</option>
+                        <% title.forEach((title) => { %>
+                            <option value="<%- title %>"><%- title %></option>
+                        <% }) %>
+                    </select>
+
+                    <% let strength = ["Good", "Strong", "Very Strong"] %>
+
+                    <select name="staff">
+                            <option value="">Your Staff Strength</option>
+                        <% strength.forEach((strength) => { %>
+                            <option value="<%- strength %>"><%- strength %></option>
+                        <% }) %>
+                    </select>
+
+                    <input type="text" placeholder="Contact Address" name="address">
+
+                    <% let state = ["Lagos", "Abuja", "Rivers", "Oyo", "Ogun", "Anambra", "Osun", "Delta", "Edo", "Kaduna"] %>
+
+                    <select name="location">
+                            <option value="">Your Location</option>
+                        <% state.forEach((state) => { %>
+                            <option value="<%- state %>"><%- state %></option>
+                        <% }) %>
+                    </select>
+
+                    <input type="text" placeholder="Website URL" name="url">
+                    <input type="text" placeholder="Preferred Username" name="username">
+                    <input type="password" placeholder="Password" name="pass1">
+                    <input type="password" placeholder="Confirm Password" name="pass2">
+                    <!-- <input type="submit" name="" value = "Click to Register"> -->
+                    <button type="submit" name="" class="submit">Click to Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Connect With Us</p>
+        <div class="social-icons">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+</body>
+</html>
